@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://bstw7kcfy0m6e"]
+
+[ext_resource type="Script" uid="uid://ctff5t16vjqaa" path="res://canvas_layer.gd" id="1_tg4cr"]
+[ext_resource type="FontFile" uid="uid://dr3q2rb60qi5d" path="res://Kitchen.ttf" id="2_37rai"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qrqu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx0kw"]
+bg_color = Color(0.956863, 0.584314, 0.121569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4oxd"]
+bg_color = Color(0.705882, 0.309804, 0.0666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsbdh"]
+bg_color = Color(0.709804, 0.313726, 0.0666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_tg4cr")
+
+[node name="pause_menu" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.98
+anchor_bottom = 1.02
+offset_right = 16.04
+offset_bottom = 0.039917
+
+[node name="ColorRect" type="ColorRect" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.013
+anchor_bottom = 0.976
+offset_right = 0.11499
+offset_bottom = -0.136047
+mouse_filter = 2
+color = Color(0, 0, 0, 0.105882)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -74.0
+offset_right = 103.5
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="Resume" type="Button" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0.819608, 0.505882, 1)
+theme_override_colors/font_color = Color(0.960784, 0.596078, 0.129412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_37rai")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0qrqu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_w4oxd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w4oxd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fsbdh")
+text = "Resume
+"
+icon_alignment = 1
+
+[node name="Menu" type="Button" parent="pause_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0.819608, 0.505882, 1)
+theme_override_colors/font_color = Color(0.960784, 0.596078, 0.129412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_37rai")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0qrqu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mx0kw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_w4oxd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w4oxd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fsbdh")
+text = "Menu
+"
+icon_alignment = 1
+
+[connection signal="pressed" from="pause_menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pause_menu/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

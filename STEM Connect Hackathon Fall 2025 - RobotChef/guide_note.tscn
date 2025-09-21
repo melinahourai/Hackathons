@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://iunpgdb504qk"]
+
+[ext_resource type="Texture2D" uid="uid://bd2gt1w1dofoq" path="res://Sprites/Background/green.jpg" id="1_bx2qy"]
+[ext_resource type="Script" uid="uid://dh4h6frw7c3a" path="res://guide_note.gd" id="1_gq1m1"]
+[ext_resource type="FontFile" uid="uid://dr3q2rb60qi5d" path="res://Kitchen.ttf" id="2_gq1m1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sl21c"]
+texture = ExtResource("1_bx2qy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eigj0"]
+bg_color = Color(1, 1, 0.819608, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx2qy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq1m1"]
+bg_color = Color(0.956863, 0.584314, 0.121569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sl21c"]
+bg_color = Color(0.705882, 0.309804, 0.0666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpt1j"]
+bg_color = Color(0.709804, 0.313726, 0.0666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="guide_note" type="Node2D"]
+script = ExtResource("1_gq1m1")
+
+[node name="background" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 653.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_sl21c")
+
+[node name="background2" type="Panel" parent="."]
+offset_left = 179.0
+offset_top = 1.0
+offset_right = 975.0
+offset_bottom = 653.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eigj0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 181.0
+offset_right = 1269.0
+offset_bottom = 556.0
+scale = Vector2(0.730954, 1.00965)
+theme_override_colors/font_color = Color(0.705882, 0.309804, 0.0745098, 1)
+theme_override_colors/font_shadow_color = Color(0.705882, 0.309804, 0.0745098, 1)
+theme_override_colors/font_outline_color = Color(0.952941, 0.631373, 0.192157, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_gq1m1")
+theme_override_font_sizes/font_size = 40
+text = "
+How To Play
+
+1. You are a Robot Chef! Customers will come into 
+your restaurant, but won't know what they want
+to order.
+
+2. Since you are a Robot Chef, you can scan the 
+customers and learn more about them, such as
+their likes and dislikes when it comes to food.
+
+3. Based on their info, choose the food option    
+out of three that they'd like best!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="guide" type="Button" parent="."]
+offset_left = 474.0
+offset_top = 555.0
+offset_right = 698.0
+offset_bottom = 675.0
+scale = Vector2(0.88, 0.639998)
+theme_override_colors/font_outline_color = Color(1, 0.819608, 0.505882, 1)
+theme_override_colors/font_color = Color(0.960784, 0.596078, 0.129412, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_gq1m1")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bx2qy")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_gq1m1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gq1m1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_gq1m1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gq1m1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sl21c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sl21c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bpt1j")
+text = "Got it!"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[connection signal="pressed" from="guide" to="." method="_on_guide_pressed"]

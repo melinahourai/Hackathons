@@ -1,0 +1,180 @@
+[gd_scene load_steps=13 format=3 uid="uid://bqu3jfmr6f26a"]
+
+[ext_resource type="Script" uid="uid://yogjwi22wwdk" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://cwpc8q1buhhj4" path="res://Sprites/Background/counter.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dl351x25mrfcf" path="res://Sprites/1835.jpg" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://dnfgopn5ptt3p" path="res://Sprites/Background/robot chef.png" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://dr3q2rb60qi5d" path="res://Kitchen.ttf" id="4_jix8l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
+texture = ExtResource("2_glbon")
+modulate_color = Color(1, 1, 1, 0.678431)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("2_7vrkn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("3_fu7sn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jix8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.956863, 0.584314, 0.121569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.705882, 0.309804, 0.0666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.709804, 0.313726, 0.0666667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbon")
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.153
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = -0.143982
+theme_override_styles/panel = SubResource("StyleBoxTexture_fu7sn")
+
+[node name="counter" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.021
+anchor_right = 1.0
+anchor_bottom = 1.153
+offset_top = -13.608
+offset_right = 6.0
+offset_bottom = -0.143982
+theme_override_styles/panel = SubResource("StyleBoxTexture_glbon")
+
+[node name="chef" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.187
+anchor_top = 0.269
+anchor_right = 0.83
+anchor_bottom = 1.269
+offset_left = -0.424011
+offset_top = -0.312012
+offset_right = 410.84
+offset_bottom = -0.312012
+grow_horizontal = 2
+scale = Vector2(0.640001, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_right = 0.924
+anchor_bottom = 0.287
+offset_left = 6.84
+offset_top = 28.0
+offset_right = 6.552
+offset_bottom = 44.024
+theme_override_colors/font_color = Color(0.952941, 0.631373, 0.192157, 1)
+theme_override_colors/font_shadow_color = Color(0.701961, 0.313726, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(0.996078, 0.819608, 0.501961, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 201
+text = "Robot Chef"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="play" type="Button" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.136
+offset_left = 486.0
+offset_top = 478.0
+offset_right = -502.0
+offset_bottom = -121.128
+theme_override_colors/font_outline_color = Color(1, 0.819608, 0.505882, 1)
+theme_override_colors/font_color = Color(0.960784, 0.596078, 0.129412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jix8l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+text = "Play"
+icon_alignment = 1
+
+[node name="guide" type="Button" parent="."]
+layout_mode = 2
+offset_left = 239.0
+offset_top = 230.0
+offset_right = 393.0
+offset_bottom = 349.0
+rotation = -0.0743561
+theme_override_colors/font_outline_color = Color(1, 0.819608, 0.505882, 1)
+theme_override_colors/font_color = Color(0.960784, 0.596078, 0.129412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jix8l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+text = "Guide"
+icon_alignment = 1
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 789.0
+offset_top = 276.0
+offset_right = 944.0
+offset_bottom = 377.0
+rotation = 0.144191
+theme_override_colors/font_outline_color = Color(1, 0.819608, 0.505882, 1)
+theme_override_colors/font_color = Color(0.960784, 0.596078, 0.129412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jix8l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+text = "Quit"
+icon_alignment = 1
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="guide" to="." method="_on_guide_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
